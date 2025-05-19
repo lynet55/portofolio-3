@@ -179,7 +179,7 @@ classes: wide
         <img src="{{ site.baseurl }}/assets/images/19_balinV1.jpg" alt="Hybrida Crewneck Design 1">
         <img src="{{ site.baseurl }}/assets/images/19_balinV2.jpg" alt="Hybrida Crewneck Design 2">
       </div>
-      <video controls width="100%">
+      <video autoplay loop muted width="100%">
         <source src="{{ site.baseurl }}/assets/images/warehousejub.mp4" type="video/mp4">
       </video>
       <p>Crew Neck design iteration on a crewneck designed for the 20th anneversary of NTNU student union Hybrida</p>
@@ -203,10 +203,10 @@ classes: wide
     <div class="grid-item">
       <h2>LAST SHANNANIGANS - club event</h2>
       <div class="project-videos">
-        <video controls>
+        <video autoplay loop muted>
           <source src="{{ site.baseurl }}/assets/images/Black Solid 2.mp4" type="video/mp4">
         </video>
-        <video controls>
+        <video autoplay loop muted>
           <source src="{{ site.baseurl }}/assets/images/Grey-Black-RecordEye@UU.mp4" type="video/mp4">
         </video>
       </div>
