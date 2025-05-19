@@ -269,10 +269,13 @@ classes: wide
     <div class="grid-item">
       <h2>R24 REAR WING</h2>
       <div class="project-images vertical-stack">
+        <img src="{{ site.baseurl }}/assets/images/revolve-hera.png" alt="Revolve NTNU Race Car">
         <img src="{{ site.baseurl }}/assets/images/rear-wing_.png" alt="R24 Rear Wing Design">
         <img src="{{ site.baseurl }}/assets/images/rear-wing-3.png" alt="R24 Rear Wing Visualization">
       </div>
-      <p>Designed and manufactured rear wing for Revolve NTNU Formula Student Team <a href="https://www.revolve.no" target="_blank">https://www.revolve.no</a></p>
+      <p>Designed and manufactured rear wing for HERA, Revolve NTNUs first overall winning car in Formula Student Team. 
+      
+      <a href="https://www.revolve.no" target="_blank">https://www.revolve.no</a></p>
     </div>
     
     <!-- R25 Telemetry System Project -->
