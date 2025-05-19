@@ -38,7 +38,6 @@ classes: wide
   
   .grid-item {
     overflow: hidden;
-    margin-bottom: 1rem;
     width: 100%;
   }
   
