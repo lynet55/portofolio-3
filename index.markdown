@@ -121,10 +121,10 @@ classes: wide
     font-size: 3.5rem;
     color: #80EAFF; /* Lighter bright blue */
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: 2px;
-    font-family: 'Caveat', cursive;
-    text-transform: none;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
   }
   
   p {
