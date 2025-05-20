@@ -377,12 +377,6 @@ classes: wide
 
 <div class="content-wrapper">
 
-  <div class="introduction">
-    <p>Hi! My name is Balin Balinov, currently doing a masters in Engineering and ICT@NTNU in Trondheim. These days im spending most of my time building a racecar for <a href="https://www.revolve.no" target="_blank">REVOLVE NTNU</a> Throughout the years i have tipped my toes in design and engineering projects, here are some ;)
-    </p>
-  </div>
-
-
   <div class="grid-container">
     <!-- R25 Telemetry System Project -->
     <div class="grid-item">
