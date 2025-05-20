@@ -229,74 +229,265 @@ classes: wide
     display: block;
     margin: 0 auto;
   }
+
+  /* Image and Video popup styles */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90vh;
+    z-index: 1001;
+  }
+
+  .popup-content img, .popup-content video {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 2px solid hsl(323, 90.20%, 51.80%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Make images and videos clickable */
+  .grid-item img, .project-images img,
+  .grid-item video, .project-videos video {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .grid-item img:hover, .project-images img:hover,
+  .grid-item video:hover, .project-videos video:hover {
+    transform: scale(1.02);
+  }
+
+  /* Style for grid items with many images */
+  .grid-item.full-width {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .grid-item.full-width .project-images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .grid-item.full-width .project-images img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.1);
+  }
+
+  /* Style for small centered header */
+  .small-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto 1rem auto;
+    padding: 0 2rem;
+  }
+
+  .small-header img {
+    max-width: 300px;
+    height: auto;
+  }
+
+  /* Style for the introduction section */
+  .introduction {
+    text-align: center;
+    max-width: 800px;
+    margin: 1rem auto 2rem auto;
+    padding: 0 2rem;
+  }
+
+  .introduction p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .introduction a {
+    color: hsl(323, 90.20%, 51.80%);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .introduction a:hover {
+    opacity: 0.8;
+  }
+
+  .highlight {
+    color: hsl(323, 90.20%, 51.80%);
+  }
+
+  /* Style for signature header */
+  .signature-header {
+    text-align: right;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    padding: 0 2rem;
+  }
+
+  .signature-header img {
+    max-width: 200px;
+    height: auto;
+    margin-left: auto;
+  }
+
+  /* Style for large video grid items */
+  .grid-item.large-videos {
+    width: 100%;
+  }
+
+  .grid-item.large-videos .project-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .grid-item.large-videos video {
+    width: 100%;
+    height: auto;
+    transform: scale(1.05);
+  }
+
+  /* Style for text selection */
+  ::selection {
+    background-color: hsl(323, 90.20%, 51.80%);
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background-color: hsl(323, 90.20%, 51.80%);
+    color: white;
+  }
 </style>
 
 <div class="content-wrapper">
-  <div class="main-header">
-    <img src="{{ site.baseurl }}/assets/images/HEADER.png" alt="Site Header">
+
+  <div class="introduction">
+    <p>Hi! My name is Balin Balinov, currently doing a masters in Engineering and ICT@NTNU in Trondheim. These days im spending most of my time building a racecar for <a href="https://www.revolve.no" target="_blank">REVOLVE NTNU</a> Throughout the years i have tipped my toes in design and engineering projects, here are some ;)
+    </p>
   </div>
 
+
   <div class="grid-container">
-    <!-- 2023 Rumpe Ristern Project -->
+    <!-- R25 Telemetry System Project -->
     <div class="grid-item">
-      <h2>2023 RUMPE RISTERN</h2>
-      <div class="project-mixed-media-5">
-        <img src="{{ site.baseurl }}/assets/images/Screenshot 2025-05-19 at 19.36.49.png" alt="Rumpe Ristern Screenshot 1">
-        <img src="{{ site.baseurl }}/assets/images/blaaCanvas(26.03.22).png" alt="Rumpe Ristern Screenshot 2">
-        <img src="{{ site.baseurl }}/assets/images/image copy.png" alt="Rumpe Ristern Image 1">
-        <img src="{{ site.baseurl }}/assets/images/image copy 2.png" alt="Rumpe Ristern Image 2">
+      <h2>2025 R25 Telemetry System</h2>
+      <div class="project-images vertical-stack">
+        <img src="{{ site.baseurl }}/assets/images/RevolveNTNU-Telemetry/telemetry-system.png" alt="R25 Telemetry System">
+        <img src="{{ site.baseurl }}/assets/images/RevolveNTNU-Telemetry/telemetry-interface.png" alt="Telemetry System Interface">
+      </div>
+      <p>I was responsible for leading a team of developers to create a racecar telemetry system for monitoring safety critcal data, and analyzing data post testing. As the leader of the group i have had a hand in the develoopment of the complete system archtecture, for better or worse. When i came to the frontend i made sure to put an artisic touch to it. </p>
+    </div>
+
+    <!-- Last Shannanigans Club Event -->
+    <div class="grid-item">
+      <h2>2025 LAST SHANNANIGANS - club event</h2>
+      <div class="project-videos">
         <video autoplay loop muted>
-          <source src="{{ site.baseurl }}/assets/images/RR.mp4" type="video/mp4">
+          <source src="{{ site.baseurl }}/assets/images/UnofficialUnion/uu-black-solid.mp4" type="video/mp4">
+        </video>
+        <video autoplay loop muted>
+          <source src="{{ site.baseurl }}/assets/images/UnofficialUnion/uu-record-eye.mp4" type="video/mp4">
         </video>
       </div>
-      <p>Design and development for the 2023 Rumpe Ristern event, including visual identity, promotional materials, and digital assets.</p>
+      <p>Designed and animated instagram post, to promote a event hosted by the UNOFFICIAL UNION.</p>
+    </div>
+
+    <!-- R24 Rear Wing Project -->
+    <div class="grid-item">
+      <h2>2024 R24 REAR WING</h2>
+      <div class="project-images vertical-stack">
+        <img src="{{ site.baseurl }}/assets/images/RevolveNTNU-Aerodynamics/revolve-car-render.png" alt="Revolve NTNU Race Car">
+        <img src="{{ site.baseurl }}/assets/images/RevolveNTNU-Aerodynamics/revolve-wing-design.png" alt="R24 Rear Wing Design">
+        <img src="{{ site.baseurl }}/assets/images/RevolveNTNU-Aerodynamics/revolve-wing-render.png" alt="R24 Rear Wing Visualization">
+      </div>
+      <p>Designed and manufactured rear wing for HERA, Revolve NTNUs first overall winning car in Formula Student Team. Did about 200 CFD simulations, ended up with this design. Together with my team we spent the better part of spring 2024 manufacturing the complete areodynamic package in carbon fibre.
+      
+      The 3D designs where done using SolidWorks</p>
+    </div>
+
+    <!-- 2022 Rumpe Ristern Project -->
+    <div class="grid-item">
+      <h2>2022 RUMPE RISTERN</h2>
+      <div class="project-mixed-media-5">
+        <img src="{{ site.baseurl }}/assets/images/RR/rr-cover.png" alt="Rumpe Ristern Cover">
+        <img src="{{ site.baseurl }}/assets/images/RR/rr-blue-canvas.png" alt="Rumpe Ristern Blue Canvas">
+        <img src="{{ site.baseurl }}/assets/images/RR/rr-green-canvas.png" alt="Rumpe Ristern Green Canvas">
+        <img src="{{ site.baseurl }}/assets/images/RR/rr-orange-canvas.png" alt="Rumpe Ristern Orange Canvas">
+        <video autoplay loop muted>
+          <source src="{{ site.baseurl }}/assets/images/RR/rr-animation.mp4" type="video/mp4">
+        </video>
+        <video autoplay loop muted>
+          <source src="{{ site.baseurl }}/assets/images/RR/HENK.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p>Where i am from it is typical for many friend groups to create a Concept upon graduating from high school. Usually a group orders their own merch, and releases songs associted with the concept. In regards to this i designed the covers for some of our songs, and design some of the Spotify Canvases used.</p>
+    </div>
+
+    <!-- Spotify Canvases -->
+    <div class="grid-item large-videos">
+      <h2>2022 Spotify Canvases</h2>
+      <div class="project-videos">
+        <video autoplay loop muted>
+          <source src="{{ site.baseurl }}/assets/images/Canvas/pigeland-animation.mp4" type="video/mp4">
+        </video>
+        <video autoplay loop muted>
+          <source src="{{ site.baseurl }}/assets/images/Canvas/Sunroaad.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p>In 2022 i did a couple of spotify canvases. Some are animated using After Effects, and some using Procreate. Here is a commision for a spotifyCanvas animation for Pigeland 2022</p>
     </div>
 
     <!-- Hybrida Student Union Project -->
     <div class="grid-item">
-      <h2>20- Anneversary Hybrida Student Union</h2>
+      <h2>2022 20th Anneversary Hybrida Student Union</h2>
       <div class="project-images vertical-stack">
-        <img src="{{ site.baseurl }}/assets/images/19_balinV1.jpg" alt="Hybrida Crewneck Design 1">
-        <img src="{{ site.baseurl }}/assets/images/19_balinV2.jpg" alt="Hybrida Crewneck Design 2">
+        <img src="{{ site.baseurl }}/assets/images/Hybrida/hybrida-crewneck-v1.jpg" alt="Hybrida Crewneck Design 1">
+        <img src="{{ site.baseurl }}/assets/images/Hybrida/hybrida-crewneck-v2.jpg" alt="Hybrida Crewneck Design 2">
       </div>
       <video autoplay loop muted width="100%">
-        <source src="{{ site.baseurl }}/assets/images/warehouse_jub_30.mp4" type="video/mp4">
+        <source src="{{ site.baseurl }}/assets/images/Hybrida/hybrida-warehouse-anniversary.mp4" type="video/mp4">
       </video>
-      <p>Crew Neck design iteration on a crewneck designed for the 20th anneversary of NTNU student union Hybrida</p>
+      <p>Some design iterations for a crewneck design used for the merch for the 20th jubeleum of the student union Hybrida. In addition i did a render which was used as a background animation at the closing party for the week long event.</p>
     </div>
-    
-    <!-- R24 Rear Wing Project -->
-    <div class="grid-item">
-      <h2>R24 REAR WING</h2>
-      <div class="project-images vertical-stack">
-        <img src="{{ site.baseurl }}/assets/images/revolve-hera.png" alt="Revolve NTNU Race Car">
-        <img src="{{ site.baseurl }}/assets/images/rear-wing_.png" alt="R24 Rear Wing Design">
-        <img src="{{ site.baseurl }}/assets/images/rear-wing-3.png" alt="R24 Rear Wing Visualization">
+
+    <!-- Original Graphics -->
+    <div class="grid-item full-width">
+      <h2>2021 Original Graphics</h2>
+      <div class="project-images">
+        <img src="{{ site.baseurl }}/assets/images/OriginalGraphics/og-many-kisses.png" alt="Many Kisses Artwork">
+        <img src="{{ site.baseurl }}/assets/images/OriginalGraphics/og-abstract-1.png" alt="Original Artwork">
       </div>
-      <p>Designed and manufactured rear wing for HERA, Revolve NTNUs first overall winning car in Formula Student Team. 
-      
-      <a href="https://www.revolve.no" target="_blank">https://www.revolve.no</a></p>
+      <p>Enjoy playing around with graphics, here are some...</p>
     </div>
-    
-    <!-- R25 Telemetry System Project -->
-    <div class="grid-item">
-      <h2>R25 Telemetry System</h2>
-      <img src="{{ site.baseurl }}/assets/images/RTS.png" alt="R25 Telemetry System">
-      <p>Responsible for the design and development a full racecar telemetry system for Revolve NTNU Formula Student Teams</p>
-    </div>
-    
-    <!-- Last Shannanigans Club Event -->
-    <div class="grid-item">
-      <h2>LAST SHANNANIGANS - club event</h2>
-      <div class="project-videos">
-        <video autoplay loop muted>
-          <source src="{{ site.baseurl }}/assets/images/Black Solid 2.mp4" type="video/mp4">
-        </video>
-        <video autoplay loop muted>
-          <source src="{{ site.baseurl }}/assets/images/Grey-Black-RecordEye@UU.mp4" type="video/mp4">
-        </video>
+
+    <!-- Black Sketches -->
+    <div class="grid-item full-width">
+      <h2>Black Sketches</h2>
+      <div class="project-images">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-daily-1.png" alt="Daily Sketch 1">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-sketch-1.png" alt="Black Sketch 1">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-sketch-2.png" alt="Black Sketch 2">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-sketch-3.png" alt="Black Sketch 3">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-sketch-4.png" alt="Black Sketch 4">
+        <img src="{{ site.baseurl }}/assets/images/BlackScetches/bs-sketch-5.png" alt="Black Sketch 5">
       </div>
-      <p>Designed and animated instagram post, to promote a event hosted by the UNOFFICIAL UNION 1.mai.</p>
+      <p>Collection of some fast scetches i have done throught, just for the sake of it':)'</p>
     </div>
   </div>
 
@@ -304,5 +495,86 @@ classes: wide
     <img src="{{ site.baseurl }}/assets/images/BOTTOM.png" alt="Bottom Image">
   </div>
 </div>
+
+
+  <div class="small-header">
+    <img src="{{ site.baseurl }}/assets/images/HEADER.png" alt="Site Header">
+  </div>
+
+
+<!-- Media Popup Modal -->
+<div class="popup-overlay" id="mediaPopup">
+  <div class="popup-content">
+    <img id="popupImage" src="" alt="Enlarged image" style="display: none;">
+    <video id="popupVideo" controls autoplay loop style="display: none;">
+      <source src="" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('mediaPopup');
+    const popupImg = document.getElementById('popupImage');
+    const popupVideo = document.getElementById('popupVideo');
+    
+    // Get all images and videos
+    const images = document.querySelectorAll('.grid-item img, .project-images img');
+    const videos = document.querySelectorAll('.grid-item video, .project-videos video');
+    
+    // Handle images
+    images.forEach(img => {
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        popup.style.display = 'block';
+        popupImg.style.display = 'block';
+        popupVideo.style.display = 'none';
+        popupImg.src = this.src;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Handle videos
+    videos.forEach(video => {
+      video.addEventListener('click', function(e) {
+        e.stopPropagation();
+        popup.style.display = 'block';
+        popupImg.style.display = 'none';
+        popupVideo.style.display = 'block';
+        
+        // Get the source from the original video
+        const originalSource = this.querySelector('source');
+        popupVideo.querySelector('source').src = originalSource.src;
+        popupVideo.load(); // Reload the video with new source
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Close popup
+    popup.addEventListener('click', function() {
+      popup.style.display = 'none';
+      document.body.style.overflow = '';
+      popupVideo.pause(); // Pause video when closing
+    });
+    
+    // Prevent closing when clicking the media itself
+    popupImg.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+    
+    popupVideo.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+        popupVideo.pause(); // Pause video when closing
+      }
+    });
+  });
+</script>
 
 
